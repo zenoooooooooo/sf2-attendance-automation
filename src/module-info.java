@@ -18,4 +18,17 @@ module SF2_AUTOMATION_PROJECT {
     requires javafx.swing;
     requires javafx.web;
     requires java.base;
+    requires org.apache.poi.poi;
+    requires org.apache.poi.examples;
+    requires org.apache.poi.excelant;
+    requires poi.javadoc;
+    requires org.apache.poi.ooxml;
+    requires org.apache.poi.ooxml.schemas;
+    requires org.apache.poi.scratchpad;
+    requires org.apache.commons.compress;
+    requires commons.logging;
+    requires org.apache.xmlbeans;
+    requires ant;
+    requires org.apache.logging.log4j;
+    requires org.apache.logging.log4j.core;
 }

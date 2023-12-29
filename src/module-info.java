@@ -5,6 +5,8 @@
 
 module SF2_AUTOMATION_PROJECT {
     
+    opens sf2_automation_project;
+    
     exports sf2_automation_project to javafx.graphics, javafx.fxml;
     
     requires javafx.swt;

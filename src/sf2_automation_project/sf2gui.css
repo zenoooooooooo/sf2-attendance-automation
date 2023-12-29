@@ -5,3 +5,25 @@
 .mainFxmlClass {
     -fx-background-color: #000027;
 }
+
+.tabPane {
+    /* -fx-background-color: #ffffff;*/
+}
+
+.flowPane {
+    -fx-background-color: #cccccc;
+    -fx-orientation: vertical;
+    -fx-vgap: 20;
+    -fx-padding: 10 0 0 0;
+}
+
+.flowPaneBtns {
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 150;
+    -fx-pref-height: 50;
+}
+
+.flowPaneBtns:hover {
+    -fx-pref-width: 160;
+    -fx-border-color: #000027;
+}

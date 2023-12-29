@@ -21,10 +21,10 @@ import javafx.scene.layout.AnchorPane;
  * @author psyche
  */
 public class SF2GUIController implements Initializable {
-    
+
     @FXML
     private TabPane tabPane = new TabPane();
-    
+
     @FXML
     private void excelBtn() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ChooseFile.fxml"));
@@ -35,13 +35,32 @@ public class SF2GUIController implements Initializable {
         tabPane.getTabs().add(chooseFileTab);
         tabPane.getSelectionModel().select(chooseFileTab);
     }
-    
-    
+
     @FXML
     private void databaseBtn() throws IOException {
         AnchorPane dbpane = FXMLLoader.load(getClass().getResource("Database.fxml"));
         Tab dbtab = new Tab("Database", dbpane);
         tabPane.getTabs().add(dbtab);
+    }
+
+    @FXML
+    private void reportBtn() throws IOException {
+        //Some code
+    }
+
+    @FXML
+    private void graphBtn() throws IOException {
+        //Some code
+    }
+
+    @FXML
+    private void configureBtn() throws IOException {
+        //Some code
+    }
+
+    @FXML
+    private void instructionBtn() throws IOException {
+        //Some code
     }
 
     @FXML

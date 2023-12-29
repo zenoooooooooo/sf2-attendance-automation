@@ -35,17 +35,12 @@ module SF2_AUTOMATION_PROJECT {
     requires ant;
     requires org.apache.logging.log4j;
     requires org.apache.logging.log4j.core;
-<<<<<<< HEAD
-    requires SparseBitSet;
-    requires org.apache.commons.codec;
-    requires org.apache.commons.collections4;
-    requires org.apache.commons.io;
-    requires commons.math3;
-=======
     requires org.apache.commons.io;
     requires org.apache.commons.collections4;
     requires org.apache.commons.codec;
     requires commons.math3;
     requires SparseBitSet;
->>>>>>> e8024d545e289121b453bbe62cb1cfff3781bcce
+    requires poi.javadoc;
+    requires commons.logging;
+
 }

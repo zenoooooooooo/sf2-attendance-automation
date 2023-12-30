@@ -31,41 +31,39 @@ public class ChooseFileController implements Initializable {
     
     private FileChooser fchooser = new FileChooser();
     
+    private File choosedFile;
+    
     @FXML
     private TabPane tabp;
     
-    private void goToExcel(File excelFile) throws IOException {
-        if (excelFile != null) {
-            if (excelFile.exists() && excelFile.isFile()) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Excel.fxml"));
-                AnchorPane excelp = loader.load();
-                ExcelController controller = loader.getController();
-                controller.changeProc(tabp, tabp.getSelectionModel().getSelectedItem());
-                Tab excelt = new Tab("Excel", excelp);
-                tabp.getTabs().add(excelt);
-                tabp.getSelectionModel().select(excelt);
-                
-            }
-        }
-        
-    }
-    
     public void setTabPane(TabPane tabPane) {
         tabp = tabPane;
+    }
+    
+    @FXML
+    private void goToExcel() throws IOException {
+        if (choosedFile != null) {
+            if (choosedFile.exists() && choosedFile.isFile()) {
+                AnchorPane excelPane = FXMLLoader.load(getClass().getResource("Excel.fxml"));
+                Tab excelTab = new Tab("Excel", excelPane);
+                tabp.getTabs().add(excelTab);
+                tabp.getSelectionModel().select(excelTab);
+            }
+        }
     }
 
     @FXML
     public void chooseFileBtn() throws IOException {
         File prop = new File("src/sf2_automation_project/sf2.properties");
-        File file = fchooser.showOpenDialog(null);
-        if (prop.exists() && file != null) {
+        choosedFile = fchooser.showOpenDialog(null);
+        if (prop.exists() && choosedFile != null) {
             SF2Config conf = new SF2Config(prop);
-            sf2FilePath = file.getAbsolutePath();
+            sf2FilePath = choosedFile.getAbsolutePath();
             if (conf.getSF2FilePath().isBlank() || !conf.getSF2FilePath().contentEquals(sf2FilePath)) {
                 conf.setSF2FilePath(sf2FilePath);
             }
-            goToExcel(file);
         }
+        filetf.setText(sf2FilePath);
     }
 
     /**

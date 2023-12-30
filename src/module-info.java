@@ -27,14 +27,17 @@ module SF2_AUTOMATION_PROJECT {
     requires org.apache.poi.poi;
     requires org.apache.poi.examples;
     requires org.apache.poi.excelant;
-    requires poi.javadoc;
     requires org.apache.poi.ooxml;
     requires org.apache.poi.ooxml.schemas;
     requires org.apache.poi.scratchpad;
     requires org.apache.commons.compress;
-    requires commons.logging;
     requires org.apache.xmlbeans;
     requires ant;
     requires org.apache.logging.log4j;
     requires org.apache.logging.log4j.core;
+    requires org.apache.commons.io;
+    requires org.apache.commons.collections4;
+    requires org.apache.commons.codec;
+    requires commons.math3;
+    requires SparseBitSet;
 }

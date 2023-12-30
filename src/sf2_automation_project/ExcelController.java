@@ -7,6 +7,8 @@ package sf2_automation_project;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 
 /**
  * FXML Controller class
@@ -14,6 +16,13 @@ import javafx.fxml.Initializable;
  * @author psyche
  */
 public class ExcelController implements Initializable {
+    
+    private TabPane tabp;
+    
+    public void changeProc(TabPane tabPane, Tab tab) {
+        this.tabp = tabPane;
+        tabp.getTabs().remove(tab);
+    }
 
     /**
      * Initializes the controller class.

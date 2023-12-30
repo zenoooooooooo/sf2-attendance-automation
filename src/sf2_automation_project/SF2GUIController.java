@@ -27,9 +27,13 @@ public class SF2GUIController implements Initializable {
     
     @FXML
     private void excelBtn() throws IOException {
-        AnchorPane excelp = FXMLLoader.load(getClass().getResource("Excel.fxml"));
-        Tab dbtab = new Tab("Excel", excelp);
-        tabPane.getTabs().add(dbtab);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChooseFile.fxml"));
+        AnchorPane chooseFile = loader.load();
+        ChooseFileController controller = loader.getController();
+        controller.setTabPane(tabPane);
+        Tab chooseFileTab = new Tab("Choose File", chooseFile);
+        tabPane.getTabs().add(chooseFileTab);
+        tabPane.getSelectionModel().select(chooseFileTab);
     }
     
     

@@ -12,5 +12,6 @@
    <children>
       <Button layoutX="376.0" layoutY="188.0" mnemonicParsing="false" onAction="#chooseFileBtn" text="Choose File..." />
       <TextField fx:id="filetf" layoutX="113.0" layoutY="188.0" prefWidth="250.0" promptText="File here..." />
+      <Button layoutX="515.0" layoutY="362.0" mnemonicParsing="false" onAction="#goToExcel" text="Proceed" />
    </children>
 </AnchorPane>

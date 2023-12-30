@@ -17,7 +17,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#closeMenuItem" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -36,16 +36,16 @@
    <left>
       <FlowPane prefHeight="200.0" prefWidth="200.0" styleClass="flowPane" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" styleClass="flowPaneBtns" text="Excel" />
-            <Button mnemonicParsing="false" styleClass="flowPaneBtns" text="Database" />
+            <Button mnemonicParsing="false" onAction="#excelBtn" styleClass="flowPaneBtns" text="Excel" />
+            <Button mnemonicParsing="false" onAction="#databaseBtn" styleClass="flowPaneBtns" text="Database" />
             <Button mnemonicParsing="false" styleClass="flowPaneBtns" text="Button" />
          </children>
          <BorderPane.margin>
-            <Insets />
+            <Insets bottom="15.0" top="15.0" />
          </BorderPane.margin></FlowPane>
    </left>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" side="RIGHT" styleClass="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" side="RIGHT" styleClass="tabPane" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Home">
             <content>

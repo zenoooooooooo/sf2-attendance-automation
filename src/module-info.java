@@ -5,6 +5,8 @@
 
 module SF2_AUTOMATION_PROJECT {
     
+    requires java.sql;
+    
     opens sf2_automation_project;
     
     exports sf2_automation_project to javafx.graphics, javafx.fxml;
@@ -18,4 +20,8 @@ module SF2_AUTOMATION_PROJECT {
     requires javafx.swing;
     requires javafx.web;
     requires java.base;
+    requires mysql.connector.j;
+    requires org.slf4j;
+    requires com.zaxxer.hikari;
+    requires com.h2database;
 }

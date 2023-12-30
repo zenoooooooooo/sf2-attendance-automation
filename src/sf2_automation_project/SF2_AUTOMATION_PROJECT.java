@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -28,6 +29,7 @@ public class SF2_AUTOMATION_PROJECT extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("SF2GUI.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.initStyle(StageStyle.UTILITY);
         stage.show();
     }
     

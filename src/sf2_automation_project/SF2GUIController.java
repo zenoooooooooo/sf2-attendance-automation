@@ -4,9 +4,16 @@
  */
 package sf2_automation_project;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+
+import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -14,13 +21,32 @@ import javafx.fxml.Initializable;
  * @author psyche
  */
 public class SF2GUIController implements Initializable {
+    
+    @FXML
+    private TabPane tabPane = new TabPane();
+    
+    @FXML
+    private void excelBtn() throws IOException {
+        AnchorPane excelp = FXMLLoader.load(getClass().getResource("Excel.fxml"));
+        Tab dbtab = new Tab("Excel", excelp);
+        tabPane.getTabs().add(dbtab);
+    }
+    
+    
+    @FXML
+    private void databaseBtn() throws IOException {
+        AnchorPane dbpane = FXMLLoader.load(getClass().getResource("Database.fxml"));
+        Tab dbtab = new Tab("Database", dbpane);
+        tabPane.getTabs().add(dbtab);
+    }
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private void closeMenuItem() {
+        System.exit(0);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+
+    }
 }

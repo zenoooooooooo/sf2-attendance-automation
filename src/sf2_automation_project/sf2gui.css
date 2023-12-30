@@ -3,7 +3,7 @@
  */
 
 .mainFxmlClass {
-    -fx-background-color: #000027;
+    -fx-background-color: #ffffff;
 }
 
 .tabPane {
@@ -11,13 +11,17 @@
 }
 
 .flowPane {
-    -fx-background-color: #cccccc;
+    -fx-background-color: #000027;
+    -fx-background-radius: 0 10 10 0;
     -fx-orientation: vertical;
     -fx-vgap: 20;
-    -fx-padding: 10 0 0 0;
+    -fx-padding: 20 0 0 0;
 }
 
 .flowPaneBtns {
+    /*-fx-border-color: #999999;*/
+    -fx-border-radius: 0 5 5 0;
+    -fx-background-radius: 0 10 10 0;
     -fx-background-color: #ffffff;
     -fx-pref-width: 150;
     -fx-pref-height: 50;
@@ -25,5 +29,6 @@
 
 .flowPaneBtns:hover {
     -fx-pref-width: 160;
-    -fx-border-color: #000027;
+    -fx-effect: dropshadow(gaussian, #bfcfff, 20, 0, 0, 0);
+
 }

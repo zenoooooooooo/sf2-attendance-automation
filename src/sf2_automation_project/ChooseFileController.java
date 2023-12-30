@@ -43,7 +43,7 @@ public class ChooseFileController implements Initializable {
     @FXML
     private void goToExcel() throws IOException {
         if (choosedFile != null) {
-            if (choosedFile.exists() && choosedFile.isFile()) {
+            if (choosedFile.exists() && choosedFile.isFile() && new Excel().isExcel(choosedFile)) {
                 AnchorPane excelPane = FXMLLoader.load(getClass().getResource("Excel.fxml"));
                 Tab excelTab = new Tab("Excel", excelPane);
                 tabp.getTabs().add(excelTab);

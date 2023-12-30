@@ -40,7 +40,5 @@ module SF2_AUTOMATION_PROJECT {
     requires org.apache.commons.codec;
     requires commons.math3;
     requires SparseBitSet;
-    requires poi.javadoc;
-    requires commons.logging;
 
 }

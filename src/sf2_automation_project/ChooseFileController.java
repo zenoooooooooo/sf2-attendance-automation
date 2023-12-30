@@ -59,9 +59,12 @@ public class ChooseFileController implements Initializable {
         if (prop.exists() && choosedFile != null) {
             SF2Config conf = new SF2Config(prop);
             sf2FilePath = choosedFile.getAbsolutePath();
-            if (conf.getSF2FilePath().isBlank() || !conf.getSF2FilePath().contentEquals(sf2FilePath)) {
-                conf.setSF2FilePath(sf2FilePath);
+            if (conf.getSF2FilePath() != null) {
+                if (conf.getSF2FilePath().isBlank() || !conf.getSF2FilePath().contentEquals(sf2FilePath)) {
+                    conf.setSF2FilePath(sf2FilePath);
+                }
             }
+            
         }
         filetf.setText(sf2FilePath);
     }

@@ -42,12 +42,15 @@
    <center>
       <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" side="RIGHT" styleClass="tabPane" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="Home">
+          <Tab closable="false" text="Home">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
         </tabs>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
       </TabPane>
    </center>
 </BorderPane>

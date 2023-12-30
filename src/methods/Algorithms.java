@@ -27,65 +27,38 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class Algorithms implements algorithmsInterface {
 
-    /**
-     * @return the boysPerDay
-     */
     public List<Integer> getBoysPerDay() {
         return boysPerDay;
     }
 
-    /**
-     * @return the girlsPerDay
-     */
     public List<Integer> getGirlsPerDay() {
         return girlsPerDay;
     }
 
-    /**
-     * @return the totalPerDay
-     */
     public List<Integer> getTotalPerDay() {
         return totalPerDay;
     }
 
-    /**
-     * @return the totalSum
-     */
     public int getTotalSum() {
         return totalSum;
     }
 
-    /**
-     * @return the numberOfDates
-     */
     public int getNumberOfDates() {
         return numberOfDates;
     }
 
-    /**
-     * @return the absentTotalBoys
-     */
     public int getAbsentTotalBoys() {
         return absentTotalBoys;
     }
 
-    /**
-     * @return the absentTotalGirls
-     */
     public int getAbsentTotalGirls() {
         return absentTotalGirls;
     }
 
-    /**
-     * @return the blanks
-     */
     public int getBlanks() {
         return blanks;
     }
 
-    /**
-     * @param args the command line arguments
-     */
     private FileInputStream inputStream;
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
@@ -303,7 +276,6 @@ public class Algorithms implements algorithmsInterface {
         }
 
     }
-
 
     /* 
     Code Explanation:

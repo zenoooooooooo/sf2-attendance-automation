@@ -76,4 +76,6 @@ public class SF2Config {
         return this.properties;
     }
     
+    
+    
 }

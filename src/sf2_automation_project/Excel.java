@@ -20,20 +20,13 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class Excel {
 
     public boolean isExcel(File file) {
-        Alert alert = new Alert(AlertType.ERROR);
         boolean isExcelFile = false;
         try (FileInputStream fis = new FileInputStream(file)) {
             Workbook workbook = WorkbookFactory.create(fis);
             isExcelFile = true;
         } catch (FileNotFoundException ex) {
             //Logger.getLogger(Excel.class.getName()).log(Level.SEVERE, null, ex);
-            alert.setHeaderText("File Not Found!");
-            alert.setContentText(ex.getLocalizedMessage());
-            alert.showAndWait();
         } catch (IOException ex) {
-            alert.setHeaderText("An error occured!");
-            alert.setContentText(ex.getLocalizedMessage());
-            alert.showAndWait();
             //Logger.getLogger(Excel.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             return isExcelFile;

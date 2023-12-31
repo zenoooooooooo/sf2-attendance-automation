@@ -15,6 +15,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
@@ -24,6 +25,9 @@ import javafx.stage.FileChooser.ExtensionFilter;
  * @author psyche
  */
 public class ChooseFileController implements Initializable {
+    
+    @FXML
+    private Text errtext = new Text();
 
     private String sf2FilePath = "";
     @FXML

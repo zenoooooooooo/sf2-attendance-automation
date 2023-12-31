@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package sf2_automation_project;
+package components.SF2GUI;
 
+import components.chooseFile.ChooseFileController;
+import components.report.ReportController;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.FXML;
@@ -27,7 +30,8 @@ public class SF2GUIController implements Initializable {
 
     @FXML
     private void excelBtn() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChooseFile.fxml"));
+        File file = new File("src/components/chooseFile/ChooseFile.fxml");
+        FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
         AnchorPane chooseFile = loader.load();
         ChooseFileController controller = loader.getController();
         controller.setTabPane(tabPane);
@@ -38,19 +42,22 @@ public class SF2GUIController implements Initializable {
 
     @FXML
     private void databaseBtn() throws IOException {
-        AnchorPane dbpane = FXMLLoader.load(getClass().getResource("Database.fxml"));
+        File file = new File("src/components/database/Database.fxml");
+        AnchorPane dbpane = FXMLLoader.load(file.toURI().toURL());
         Tab dbtab = new Tab("Database", dbpane);
         tabPane.getTabs().add(dbtab);
     }
 
     @FXML
     private void reportBtn() throws IOException {
-        //Some code
-    }
-
-    @FXML
-    private void graphBtn() throws IOException {
-        //Some code
+        File file = new File("src/components/report/Report.fxml");
+        FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
+        AnchorPane report = loader.load();
+        ReportController controller = loader.getController();
+        controller.setTabPane(tabPane);
+        Tab reportTab = new Tab("Reports", report);
+        tabPane.getTabs().add(reportTab);
+        tabPane.getSelectionModel().select(reportTab);
     }
 
     @FXML

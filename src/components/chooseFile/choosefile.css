@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: #cccccc;
+}
+
+.chooseFileButton {
+    -fx-background-color: lightblue;
+}

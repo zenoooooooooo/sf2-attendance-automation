@@ -129,7 +129,7 @@ public class Algorithms implements algorithmsInterface {
 
                 int absences = 0;
 
-                for (int col = startBoys.getCol(); col <= startBoys.getCol() + getNumberOfDates() - 1; col++) {
+                for (int col = startBoys.getCol() + getBlanks(); col <= startBoys.getCol() + getBlanks() + getNumberOfDates() - 1; col++) {
                     Cell currentCell1 = currentRow1.getCell(col);
                     int presences = 0;
 
@@ -149,20 +149,20 @@ public class Algorithms implements algorithmsInterface {
                         absences++;
 
                     }
-                    Cell absentCell = currentRow1.getCell(startBoys.getCol() - getBlanks() + 25);
+                    Cell absentCell = currentRow1.getCell(startBoys.getCol() + 25);
                     absentCell.setCellValue(absences);
 
                 }
 
                 absentTotalBoys += absences;
-                Cell absentTotalCell = totalPerDayRow.getCell(startBoys.getCol() - getBlanks() + 25);
+                Cell absentTotalCell = totalPerDayRow.getCell(startBoys.getCol() + 25);
                 absentTotalCell.setCellValue(getAbsentTotalBoys());
 
                 System.out.println(absences);
                 System.out.println(getAbsentTotalBoys());
             }
 
-            for (int col = perDayCells.getCol(); col <= perDayCells.getCol() + getNumberOfDates() - 1; col++) {
+            for (int col = perDayCells.getCol() + getBlanks(); col <= perDayCells.getCol() + getBlanks() + getNumberOfDates() - 1; col++) {
                 Row currentRow = sheet.getRow(perDayCells.getRow());
                 Cell currentCell = currentRow.getCell(col);
 
@@ -195,7 +195,7 @@ public class Algorithms implements algorithmsInterface {
 
                 int absences = 0;
 
-                for (int col = startGirls.getCol(); col <= startGirls.getCol() + getNumberOfDates() - 1; col++) {
+                for (int col = startGirls.getCol() + getBlanks(); col <= startGirls.getCol() + getBlanks() + getNumberOfDates() - 1; col++) {
                     Cell currentCell1 = currentRow1.getCell(col);
                     int presences = 0;
 
@@ -216,18 +216,18 @@ public class Algorithms implements algorithmsInterface {
                         absences++;
                     }
 
-                    Cell absentCell = currentRow1.getCell(startGirls.getCol() - getBlanks() + 25);
+                    Cell absentCell = currentRow1.getCell(startGirls.getCol() + 25);
                     absentCell.setCellValue(absences);
                 }
 
                 absentTotalGirls += absences;
-                Cell absentTotalCell = totalPerDayRow.getCell(startGirls.getCol() - getBlanks() + 25);
+                Cell absentTotalCell = totalPerDayRow.getCell(startGirls.getCol() + 25);
                 absentTotalCell.setCellValue(getAbsentTotalGirls());
 
                 System.out.println(absences);
                 System.out.println(getAbsentTotalGirls());
             }
-            for (int col = perDayCells.getCol(); col <= perDayCells.getCol() + getNumberOfDates() - 1; col++) {
+            for (int col = perDayCells.getCol() + getBlanks(); col <= perDayCells.getCol() + getBlanks() + getNumberOfDates() - 1; col++) {
                 Row currentRow = sheet.getRow(perDayCells.getRow());
                 Cell currentCell = currentRow.getCell(col);
 
@@ -256,11 +256,11 @@ public class Algorithms implements algorithmsInterface {
                 int sum = getBoysPerDay().get(i) + getGirlsPerDay().get(i);
                 getTotalPerDay().add(sum);
                 Row currentRow = sheet.getRow(cells.getRow());
-                Cell currentCell = currentRow.getCell(cells.getCol() + i);
+                Cell currentCell = currentRow.getCell(cells.getCol() + getBlanks() + i);
 
                 currentCell.setCellValue(getTotalPerDay().get(i));
 
-                Cell totalAbsentCell = currentRow.getCell(cells.getCol() - getBlanks() + 25);
+                Cell totalAbsentCell = currentRow.getCell(cells.getCol() + 25);
                 totalSum += totalPerDay.get(i);
                 int overallTotal = getAbsentTotalBoys() + getAbsentTotalGirls();
                 totalAbsentCell.setCellValue(overallTotal);

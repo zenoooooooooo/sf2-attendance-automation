@@ -12,12 +12,14 @@ module SF2_AUTOMATION_PROJECT {
     opens components.excel;
     opens components.report;
     opens components.database;
+    opens components.configure;
     
     exports components.excel to javafx.graphics, javafx.fxml;
     exports components.SF2GUI to javafx.graphics, javafx.fxml;
     exports components.chooseFile to javafx.graphics, javafx.fxml;
     exports components.report to javafx.graphics, javafx.fxml;
     exports components.database to javafx.graphics, javafx.fxml;
+    exports components.configure to javafx.graphics, javafx.fxml;
     
     exports sf2_automation_project to javafx.graphics;
     

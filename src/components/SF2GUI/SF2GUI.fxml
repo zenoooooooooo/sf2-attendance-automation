@@ -35,7 +35,7 @@
             <Button mnemonicParsing="false" onAction="#excelBtn" styleClass="flowPaneBtns" text="Start" />
             <Button mnemonicParsing="false" onAction="#databaseBtn" styleClass="flowPaneBtns" text="Database" />
             <Button mnemonicParsing="false" onAction="#reportBtn" styleClass="flowPaneBtns" text="Report" />
-            <Button layoutX="10.0" layoutY="240.0" mnemonicParsing="false" styleClass="flowPaneBtns" text="Configure" />
+            <Button layoutX="10.0" layoutY="240.0" mnemonicParsing="false" onAction="#configureBtn" styleClass="flowPaneBtns" text="Configure" />
             <Button layoutX="10.0" layoutY="310.0" mnemonicParsing="false" styleClass="flowPaneBtns" text="Instructions" />
          </children>
          <BorderPane.margin>

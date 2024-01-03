@@ -4,6 +4,8 @@
  */
 package sf2_automation_project;
 
+import CPUManagement.*;
+
 import java.io.File;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +33,9 @@ public class SF2_AUTOMATION_PROJECT extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+//        Monitor1 mon1 = new Monitor1();
+//        mon1.monitor1();
+        
     }
 
 }

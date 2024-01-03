@@ -5,6 +5,8 @@
 
 module SF2_AUTOMATION_PROJECT {
     
+    requires jdk.management;
+    requires java.management;
     requires java.sql;
     
     opens components.SF2GUI;
@@ -13,6 +15,7 @@ module SF2_AUTOMATION_PROJECT {
     opens components.report;
     opens components.database;
     opens components.configure;
+    opens components.instructions;
     
     exports components.excel to javafx.graphics, javafx.fxml;
     exports components.SF2GUI to javafx.graphics, javafx.fxml;
@@ -20,6 +23,7 @@ module SF2_AUTOMATION_PROJECT {
     exports components.report to javafx.graphics, javafx.fxml;
     exports components.database to javafx.graphics, javafx.fxml;
     exports components.configure to javafx.graphics, javafx.fxml;
+    exports components.instructions to javafx.graphics, javafx.fxml;
     
     exports sf2_automation_project to javafx.graphics;
     
@@ -55,4 +59,5 @@ module SF2_AUTOMATION_PROJECT {
     requires poi.javadoc;
     requires commons.logging;
 
+    
 }

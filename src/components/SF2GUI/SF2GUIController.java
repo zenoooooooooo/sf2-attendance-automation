@@ -5,6 +5,8 @@
 package components.SF2GUI;
 
 import components.chooseFile.ChooseFileController;
+import components.configure.ConfigureController;
+import components.instructions.InstructionsController;
 import components.report.ReportController;
 import java.io.File;
 import java.io.IOException;
@@ -62,12 +64,27 @@ public class SF2GUIController implements Initializable {
 
     @FXML
     private void configureBtn() throws IOException {
-        //Some code
+        File file = new File("src/components/configure/Configure.fxml");
+        FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
+        AnchorPane configure = loader.load();
+        ConfigureController controller = loader.getController();
+        controller.setTabPane(tabPane);
+        Tab configureTab = new Tab("Configuration", configure);
+        tabPane.getTabs().add(configureTab);
+        tabPane.getSelectionModel().select(configureTab);
+        
     }
 
     @FXML
     private void instructionBtn() throws IOException {
-        //Some code
+        File file = new File("src/components/instructions/Instructions.fxml");
+        FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
+        AnchorPane instruction = loader.load();
+        InstructionsController controller = loader.getController();
+        controller.setTabPane(tabPane);
+        Tab instructionsTab = new Tab("Instructions", instruction);
+        tabPane.getTabs().add(instructionsTab);
+        tabPane.getSelectionModel().select(instructionsTab);
     }
 
     @FXML

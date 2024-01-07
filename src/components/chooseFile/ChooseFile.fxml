@@ -8,10 +8,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: gray;" styleClass="mainFxmlClass" stylesheets="@choosefile.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.chooseFile.ChooseFileController">
    <children>
-      <Button layoutX="329.0" layoutY="137.0" mnemonicParsing="false" onAction="#chooseFileBtn" prefHeight="24.0" prefWidth="106.0" styleClass="chooseFileButton" text="Choose file" />
-      <TextField fx:id="filetf" layoutX="14.0" layoutY="131.0" prefHeight="35.0" prefWidth="299.0" promptText="File here..." />
-      <Button layoutX="444.0" layoutY="137.0" mnemonicParsing="false" onAction="#goToExcel" prefHeight="24.0" prefWidth="106.0" styleClass="chooseFileButton" text="Proceed" />
-      <Text fill="#8a0202" layoutX="21.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Please choose a valid SF2 file.">
+      <Button layoutX="247.0" layoutY="200.0" mnemonicParsing="false" onAction="#chooseFileBtn" prefHeight="24.0" prefWidth="106.0" styleClass="chooseFileButton" text="Choose file" />
+      <TextField fx:id="filetf" layoutX="150.0" layoutY="152.0" prefHeight="35.0" prefWidth="299.0" promptText="File here..." />
+      <Button layoutX="479.0" layoutY="361.0" mnemonicParsing="false" onAction="#goToExcel" prefHeight="24.0" prefWidth="106.0" styleClass="chooseFileButton" text="Proceed" />
+      <Text fill="#8a0202" layoutX="150.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Please choose a valid SF2 file.">
          <font>
             <Font name="Fira Code Bold" size="13.0" />
          </font></Text>

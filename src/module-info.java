@@ -36,28 +36,25 @@ module SF2_AUTOMATION_PROJECT {
     requires javafx.swing;
     requires javafx.web;
     requires java.base;
-    requires mysql.connector.j;
-    requires org.slf4j;
-    requires com.zaxxer.hikari;
-    requires com.h2database;
     requires org.apache.poi.poi;
     requires org.apache.poi.examples;
     requires org.apache.poi.excelant;
     requires org.apache.poi.ooxml;
     requires org.apache.poi.ooxml.schemas;
     requires org.apache.poi.scratchpad;
+    requires ant;
+    requires org.apache.commons.codec;
     requires org.apache.commons.compress;
     requires org.apache.xmlbeans;
-    requires ant;
-    requires org.apache.logging.log4j;
     requires org.apache.logging.log4j.core;
+    requires commons.math3;
     requires org.apache.commons.io;
+    requires org.apache.logging.log4j;
     requires org.apache.commons.collections4;
+    requires com.zaxxer.sparsebitset;
     requires org.apache.commons.codec;
     requires commons.math3;
     requires SparseBitSet;
     requires poi.javadoc;
     requires commons.logging;
-
-    
 }

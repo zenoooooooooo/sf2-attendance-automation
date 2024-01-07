@@ -32,7 +32,7 @@
    <left>
       <FlowPane minWidth="-Infinity" prefHeight="543.0" prefWidth="186.0" styleClass="flowPane" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#excelBtn" styleClass="flowPaneBtns" text="Start" />
+            <Button mnemonicParsing="false" styleClass="flowPaneBtns" text="Start" />
             <Button mnemonicParsing="false" onAction="#databaseBtn" styleClass="flowPaneBtns" text="Database" />
             <Button mnemonicParsing="false" onAction="#reportBtn" styleClass="flowPaneBtns" text="Report" />
             <Button layoutX="10.0" layoutY="240.0" mnemonicParsing="false" onAction="#configureBtn" styleClass="flowPaneBtns" text="Configure" />

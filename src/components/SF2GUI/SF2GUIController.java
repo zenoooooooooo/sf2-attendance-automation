@@ -31,19 +31,12 @@ public class SF2GUIController implements Initializable {
     private TabPane tabPane = new TabPane();
 
     @FXML
-    private void excelBtn() throws IOException {
-        File file = new File("src/components/chooseFile/ChooseFile.fxml");
-        FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
-        AnchorPane chooseFile = loader.load();
-        ChooseFileController controller = loader.getController();
-        controller.setTabPane(tabPane);
-        Tab chooseFileTab = new Tab("Choose File", chooseFile);
-        tabPane.getTabs().add(chooseFileTab);
-        tabPane.getSelectionModel().select(chooseFileTab);
+    private void toChooseFile() throws IOException {
+        
     }
 
     @FXML
-    private void databaseBtn() throws IOException {
+    private void toDatabase() throws IOException {
         File file = new File("src/components/database/Database.fxml");
         AnchorPane dbpane = FXMLLoader.load(file.toURI().toURL());
         Tab dbtab = new Tab("Database", dbpane);
@@ -51,7 +44,7 @@ public class SF2GUIController implements Initializable {
     }
 
     @FXML
-    private void reportBtn() throws IOException {
+    private void toReport() throws IOException {
         File file = new File("src/components/report/Report.fxml");
         FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
         AnchorPane report = loader.load();
@@ -63,6 +56,15 @@ public class SF2GUIController implements Initializable {
     }
 
     @FXML
+<<<<<<< HEAD
+    private void toConfigure() throws IOException {
+        //Some code
+    }
+
+    @FXML
+    private void toInstruction() throws IOException {
+        //Some code
+=======
     private void configureBtn() throws IOException {
         File file = new File("src/components/configure/Configure.fxml");
         FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
@@ -85,6 +87,7 @@ public class SF2GUIController implements Initializable {
         Tab instructionsTab = new Tab("Instructions", instruction);
         tabPane.getTabs().add(instructionsTab);
         tabPane.getSelectionModel().select(instructionsTab);
+>>>>>>> refs/remotes/origin/main
     }
 
     @FXML

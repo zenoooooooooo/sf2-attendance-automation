@@ -32,9 +32,9 @@
    <left>
       <FlowPane minWidth="-Infinity" prefHeight="543.0" prefWidth="186.0" styleClass="flowPane" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" styleClass="flowPaneBtns" text="Start" />
-            <Button mnemonicParsing="false" onAction="#databaseBtn" styleClass="flowPaneBtns" text="Database" />
-            <Button mnemonicParsing="false" onAction="#reportBtn" styleClass="flowPaneBtns" text="Report" />
+            <Button mnemonicParsing="false" onAction="#toChooseFile" styleClass="flowPaneBtns" text="Start" />
+            <Button mnemonicParsing="false" styleClass="flowPaneBtns" text="Database" />
+            <Button mnemonicParsing="false" styleClass="flowPaneBtns" text="Report" />
             <Button layoutX="10.0" layoutY="240.0" mnemonicParsing="false" styleClass="flowPaneBtns" text="Configure" />
             <Button layoutX="10.0" layoutY="310.0" mnemonicParsing="false" styleClass="flowPaneBtns" text="Instructions" />
          </children>

@@ -5,11 +5,27 @@
 
 module SF2_AUTOMATION_PROJECT {
     
+    requires jdk.management;
+    requires java.management;
     requires java.sql;
     
-    opens sf2_automation_project;
+    opens components.SF2GUI;
+    opens components.chooseFile;
+    opens components.excel;
+    opens components.report;
+    opens components.database;
+    opens components.configure;
+    opens components.instructions;
     
-    exports sf2_automation_project to javafx.graphics, javafx.fxml;
+    exports components.excel to javafx.graphics, javafx.fxml;
+    exports components.SF2GUI to javafx.graphics, javafx.fxml;
+    exports components.chooseFile to javafx.graphics, javafx.fxml;
+    exports components.report to javafx.graphics, javafx.fxml;
+    exports components.database to javafx.graphics, javafx.fxml;
+    exports components.configure to javafx.graphics, javafx.fxml;
+    exports components.instructions to javafx.graphics, javafx.fxml;
+    
+    exports sf2_automation_project to javafx.graphics;
     
     requires javafx.swt;
     requires javafx.base;

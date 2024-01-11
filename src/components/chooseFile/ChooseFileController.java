@@ -33,7 +33,7 @@ public class ChooseFileController implements Initializable {
     
     private FileChooser fchooser = new FileChooser();
     
-    private File choosedFile;
+    private File chosenFile;
     
     private TabPane tabp;
     
@@ -43,9 +43,9 @@ public class ChooseFileController implements Initializable {
     
     @FXML
     private void goToExcel() throws IOException {
-        if (choosedFile != null) {
-            if (choosedFile.exists() && choosedFile.isFile() && new Excel().isExcel(choosedFile)) {
-                AnchorPane excelPane = FXMLLoader.load(getClass().getResource("Excel.fxml"));
+        if (chosenFile != null) {
+            if (chosenFile.exists() && chosenFile.isFile() && new Excel().isExcel(chosenFile)) {
+                AnchorPane excelPane = FXMLLoader.load(getClass().getResource("src/components/excel/Excel.fxml"));
                 Tab excelTab = new Tab("Excel", excelPane);
                 tabp.getTabs().add(excelTab);
                 tabp.getSelectionModel().select(excelTab);
@@ -56,10 +56,10 @@ public class ChooseFileController implements Initializable {
     @FXML
     public void chooseFileBtn() throws IOException {
         File prop = new File("src/sf2_automation_project/sf2.properties");
-        choosedFile = fchooser.showOpenDialog(null);
-        if (prop.exists() && choosedFile != null) {
+        chosenFile = fchooser.showOpenDialog(null);
+        if (prop.exists() && chosenFile != null) {
             SF2Config conf = new SF2Config(prop);
-            sf2FilePath = choosedFile.getAbsolutePath();
+            sf2FilePath = chosenFile.getAbsolutePath();
             if (conf.getSF2FilePath() != null) {
                 if (conf.getSF2FilePath().isBlank() || !conf.getSF2FilePath().contentEquals(sf2FilePath)) {
                     conf.setSF2FilePath(sf2FilePath);

@@ -19,6 +19,10 @@ public class ExcelController implements Initializable {
     
     private TabPane tabp;
     
+    public void setTabPane(TabPane tabPane) {
+        tabp = tabPane;
+    }
+    
     public void changeProc(TabPane tabPane, Tab tab) {
         this.tabp = tabPane;
         tabp.getTabs().remove(tab);

@@ -4,6 +4,7 @@
  */
 package components.chooseFile;
 
+import components.excel.ExcelController;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -30,25 +31,28 @@ public class ChooseFileController implements Initializable {
     private String sf2FilePath = "";
     @FXML
     private TextField filetf = new TextField();
-    
+
     private FileChooser fchooser = new FileChooser();
-    
+
     private File chosenFile;
-    
+
     private TabPane tabp;
-    
+
     public void setTabPane(TabPane tabPane) {
         tabp = tabPane;
     }
-    
+
     @FXML
     private void goToExcel() throws IOException {
         if (chosenFile != null) {
             if (chosenFile.exists() && chosenFile.isFile() && new Excel().isExcel(chosenFile)) {
-                AnchorPane excelPane = FXMLLoader.load(getClass().getResource("src/components/excel/Excel.fxml"));
-                Tab excelTab = new Tab("Excel", excelPane);
+                File file = new File("src/components/excel/Excel.fxml");
+                FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
+                AnchorPane excel = loader.load();
+                ExcelController controller = loader.getController();
+                controller.setTabPane(tabp);
+                Tab excelTab = new Tab("Excel", excel);
                 tabp.getTabs().add(excelTab);
-                tabp.getSelectionModel().select(excelTab);
             }
         }
     }
@@ -65,7 +69,7 @@ public class ChooseFileController implements Initializable {
                     conf.setSF2FilePath(sf2FilePath);
                 }
             }
-            
+
         }
         filetf.setText(sf2FilePath);
     }

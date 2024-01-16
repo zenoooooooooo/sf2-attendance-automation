@@ -4,7 +4,7 @@
  */
 package components.SF2GUI;
 
-
+import components.chooseFile.ChooseFileController;
 import components.configure.ConfigureController;
 import components.instructions.InstructionsController;
 import components.report.ReportController;
@@ -32,14 +32,20 @@ public class SF2GUIController implements Initializable {
 
     @FXML
     private void toChooseFile() throws IOException {
-        
+        File file = new File("src/components/chooseFile/ChooseFile.fxml");
+        FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
+        AnchorPane chooseFile = loader.load();
+        ChooseFileController controller = loader.getController();
+        controller.setTabPane(tabPane);
+        Tab cfTab = new Tab("Choose File", chooseFile);
+        tabPane.getTabs().add(cfTab);
     }
 
     @FXML
     private void toDatabase() throws IOException {
         File file = new File("src/components/database/Database.fxml");
-        AnchorPane dbpane = FXMLLoader.load(file.toURI().toURL());
-        Tab dbtab = new Tab("Database", dbpane);
+        AnchorPane dbPane = FXMLLoader.load(file.toURI().toURL());
+        Tab dbtab = new Tab("Database", dbPane);
         tabPane.getTabs().add(dbtab);
     }
 
@@ -65,7 +71,7 @@ public class SF2GUIController implements Initializable {
         Tab configureTab = new Tab("Configuration", configure);
         tabPane.getTabs().add(configureTab);
         tabPane.getSelectionModel().select(configureTab);
-        
+
     }
 
     @FXML

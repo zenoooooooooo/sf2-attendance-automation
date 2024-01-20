@@ -5,6 +5,7 @@
 package methods;
 
 import interfaces.*;
+import java.io.File;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -30,6 +31,7 @@ public class Algorithms implements algorithmsInterface {
     public List<Integer> getBoysPerDay() {
         return boysPerDay;
     }
+
     public List<Integer> getGirlsPerDay() {
         return girlsPerDay;
     }
@@ -41,6 +43,7 @@ public class Algorithms implements algorithmsInterface {
     public int getTotalSum() {
         return totalSum;
     }
+
     public int getNumberOfDates() {
         return numberOfDates;
     }
@@ -48,9 +51,11 @@ public class Algorithms implements algorithmsInterface {
     public int getAbsentTotalBoys() {
         return absentTotalBoys;
     }
+
     public int getAbsentTotalGirls() {
         return absentTotalGirls;
     }
+
     public int getPresentTotalBoys() {
         return presentTotalBoys;
     }
@@ -68,10 +73,10 @@ public class Algorithms implements algorithmsInterface {
     private XSSFSheet sheet;
 
     private int numberOfDates = 0;
-    
+
     private int absentTotalBoys = 0;
     private int absentTotalGirls = 0;
-    
+
     private int presentTotalBoys = 0;
     private int presentTotalGirls = 0;
     private int blanks = 0;
@@ -82,7 +87,7 @@ public class Algorithms implements algorithmsInterface {
     private int totalSum = 0;
 
     @Override
-    public void countDates(String filePath, int sheetIndex, String start, String end) {
+    public void countDates(File filePath, int sheetIndex, String start, String end) {
         try {
             inputStream = new FileInputStream(filePath);
             workbook = new XSSFWorkbook(inputStream);
@@ -121,7 +126,7 @@ public class Algorithms implements algorithmsInterface {
     }
 
     @Override
-    public void countBoys(String filePath, int sheetIndex, String start, String end, String perDay) {
+    public void countBoys(File filePath, int sheetIndex, String start, String end, String perDay) {
         try {
             inputStream = new FileInputStream(filePath);
             workbook = new XSSFWorkbook(inputStream);
@@ -136,7 +141,7 @@ public class Algorithms implements algorithmsInterface {
                 Row totalPerDayRow = sheet.getRow(perDayCells.getRow());
 
                 int absences = 0;
-                int presences = 0; 
+                int presences = 0;
 
                 for (int col = startBoys.getCol() + getBlanks(); col <= startBoys.getCol() + getBlanks() + getNumberOfDates() - 1; col++) {
                     Cell currentCell1 = currentRow1.getCell(col);
@@ -168,10 +173,10 @@ public class Algorithms implements algorithmsInterface {
                 }
                 absentTotalBoys += absences;
                 presentTotalBoys += presences;
-                
+
                 Cell absentTotalCell = totalPerDayRow.getCell(startBoys.getCol() + 25);
                 Cell presentTotalCell = totalPerDayRow.getCell(startBoys.getCol() + 26);
-                
+
                 absentTotalCell.setCellValue(getAbsentTotalBoys());
                 presentTotalCell.setCellValue(getPresentTotalBoys());
 
@@ -197,7 +202,7 @@ public class Algorithms implements algorithmsInterface {
     }
 
     @Override
-    public void countGirls(String filePath, int sheetIndex, String start, String end, String perDay) {
+    public void countGirls(File filePath, int sheetIndex, String start, String end, String perDay) {
         try {
             inputStream = new FileInputStream(filePath);
             workbook = new XSSFWorkbook(inputStream);
@@ -212,7 +217,7 @@ public class Algorithms implements algorithmsInterface {
 
                 int absences = 0;
                 int presences = 0;
-                
+
                 for (int col = startGirls.getCol() + getBlanks(); col <= startGirls.getCol() + getBlanks() + getNumberOfDates() - 1; col++) {
                     Cell currentCell1 = currentRow1.getCell(col);
                     int presencePerDay = 0;
@@ -235,7 +240,7 @@ public class Algorithms implements algorithmsInterface {
                     } else if (currentCell1 != null && currentCell1.getCellType().equals(CellType.BLANK)) {
                         presences++;
                     }
-                    
+
                     Cell absentCell = currentRow1.getCell(startGirls.getCol() + 25);
                     Cell presentCell = currentRow1.getCell(startGirls.getCol() + 26);
 
@@ -245,10 +250,10 @@ public class Algorithms implements algorithmsInterface {
 
                 absentTotalGirls += absences;
                 presentTotalGirls += presences;
-                
+
                 Cell absentTotalCell = totalPerDayRow.getCell(startGirls.getCol() + 25);
                 Cell presentTotalCell = totalPerDayRow.getCell(startGirls.getCol() + 26);
-                
+
                 absentTotalCell.setCellValue(getAbsentTotalGirls());
                 presentTotalCell.setCellValue(getPresentTotalGirls());
 
@@ -272,7 +277,7 @@ public class Algorithms implements algorithmsInterface {
     }
 
     @Override
-    public void countTotalPerDay(String filePath, int sheetIndex, String totalPerDayCells) {
+    public void countTotalPerDay(File filePath, int sheetIndex, String totalPerDayCells) {
         try {
             inputStream = new FileInputStream(filePath);
             workbook = new XSSFWorkbook(inputStream);
@@ -290,12 +295,12 @@ public class Algorithms implements algorithmsInterface {
 
                 Cell totalAbsentCell = currentRow.getCell(cells.getCol() + 25);
                 Cell totalPresentCell = currentRow.getCell(cells.getCol() + 26);
-        
+
                 totalSum += totalPerDay.get(i);
-                
+
                 int overallAbsentTotal = getAbsentTotalBoys() + getAbsentTotalGirls();
                 int overallPresentTotal = getPresentTotalBoys() + getPresentTotalGirls();
-                
+
                 totalAbsentCell.setCellValue(overallAbsentTotal);
                 totalPresentCell.setCellValue(overallPresentTotal);
 

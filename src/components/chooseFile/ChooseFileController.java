@@ -29,6 +29,8 @@ import sf2_automation_project.SF2Config;
 public class ChooseFileController implements Initializable {
 
     private String sf2FilePath = "";
+    
+    
     @FXML
     private TextField filetf = new TextField();
 
@@ -50,6 +52,8 @@ public class ChooseFileController implements Initializable {
                 FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
                 AnchorPane excel = loader.load();
                 ExcelController controller = loader.getController();
+                controller.setFile(chosenFile);
+                controller.setPath(chosenFile.getAbsolutePath());
                 controller.setTabPane(tabp);
                 Tab excelTab = new Tab("Excel", excel);
                 tabp.getTabs().add(excelTab);

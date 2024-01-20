@@ -33,7 +33,7 @@ public class SF2 {
 
     private static File file = new File("src/tests/sf2.xlsx");
     
-    private static void combine(File SF2File, int sheetNumber, String perDayBoys, String perDayGirls, String resultRangeAddress, String totalCellAddress) {
+    public void combine(File SF2File, int sheetNumber, String perDayBoys, String perDayGirls, String resultRangeAddress, String totalCellAddress) {
         try (InputStream istream = new FileInputStream(SF2File)) {
             try (Workbook wbook = new XSSFWorkbook(istream)) {
                 Sheet sheet = wbook.getSheetAt(sheetNumber);
@@ -85,7 +85,7 @@ public class SF2 {
         }
     }
 
-    private static void countAbsences(File SF2File, int sheetNumber, String startCellRangeAddress, String endCellRangeAddress, String resultCellRangeAddress) {
+    public void countAbsences(File SF2File, int sheetNumber, String startCellRangeAddress, String endCellRangeAddress, String resultCellRangeAddress) {
         try (InputStream istream = new FileInputStream(SF2File)) {
             try (Workbook wbook = new XSSFWorkbook(istream)) {
                 Sheet sheet = wbook.getSheetAt(sheetNumber);
@@ -129,7 +129,7 @@ public class SF2 {
         }
     }
 
-    private static void totalPerDay(File SF2File, int sheetNumber, String startCellRangeAddress, String endCellRangeAddress, String resultCellRangeAddress, int total, String totalCellAddress, String totalCells) {
+    public void totalPerDay(File SF2File, int sheetNumber, String startCellRangeAddress, String endCellRangeAddress, String resultCellRangeAddress, int total, String totalCellAddress, String totalCells) {
         try (InputStream istream = new FileInputStream(SF2File)) {
             try (Workbook wbook = new XSSFWorkbook(istream)) {
                 Sheet sheet = wbook.getSheetAt(sheetNumber);
@@ -182,15 +182,15 @@ public class SF2 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public void main(String[] args) {
         // TODO code application logic here
         int sheetIndex = 1;
         // Default configuration
         // Total per day
         //boys
-        totalPerDay(file, sheetIndex, "D13:AB13", "D33:AB33", "D34:AB34", 21, "AC34", "D34:AB34");
+        totalPerDay(file, sheetIndex, "D13:AB13", "D33:AB33", "D35:AB35", 21, "AC34", "D34:AB34");
         //girls
-        totalPerDay(file, sheetIndex, "D35:AB35", "D59:AB59", "D60:AB60", 25, "AC60", "D60:AB60");
+        totalPerDay(file, sheetIndex, "D35:AB35", "D59:AB59", "D61:AB61", 19, "AC60", "D60:AB60");
 
         // Total for the month - absent
         //boys

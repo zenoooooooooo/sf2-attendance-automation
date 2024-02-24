@@ -13,6 +13,8 @@ import java.lang.management.OperatingSystemMXBean;
  */
 public class Monitor1 {
         public void monitor1() {
+            
+            System.gc();
             OperatingSystemMXBean osBean = ManagementFactory.getOperatingSystemMXBean();
             
             System.out.println("Available processors: " + osBean.getAvailableProcessors());

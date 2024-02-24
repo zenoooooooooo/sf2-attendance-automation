@@ -32,14 +32,20 @@ public class SF2GUIController implements Initializable {
 
     @FXML
     private void toChooseFile() throws IOException {
-        
+        File file = new File("src/components/chooseFile/ChooseFile.fxml");
+        FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
+        AnchorPane chooseFile = loader.load();
+        ChooseFileController controller = loader.getController();
+        controller.setTabPane(tabPane);
+        Tab cfTab = new Tab("Choose File", chooseFile);
+        tabPane.getTabs().add(cfTab);
     }
 
     @FXML
     private void toDatabase() throws IOException {
         File file = new File("src/components/database/Database.fxml");
-        AnchorPane dbpane = FXMLLoader.load(file.toURI().toURL());
-        Tab dbtab = new Tab("Database", dbpane);
+        AnchorPane dbPane = FXMLLoader.load(file.toURI().toURL());
+        Tab dbtab = new Tab("Database", dbPane);
         tabPane.getTabs().add(dbtab);
     }
 
@@ -56,15 +62,6 @@ public class SF2GUIController implements Initializable {
     }
 
     @FXML
-<<<<<<< HEAD
-    private void toConfigure() throws IOException {
-        //Some code
-    }
-
-    @FXML
-    private void toInstruction() throws IOException {
-        //Some code
-=======
     private void configureBtn() throws IOException {
         File file = new File("src/components/configure/Configure.fxml");
         FXMLLoader loader = new FXMLLoader(file.toURI().toURL());
@@ -74,7 +71,7 @@ public class SF2GUIController implements Initializable {
         Tab configureTab = new Tab("Configuration", configure);
         tabPane.getTabs().add(configureTab);
         tabPane.getSelectionModel().select(configureTab);
-        
+
     }
 
     @FXML
@@ -87,7 +84,6 @@ public class SF2GUIController implements Initializable {
         Tab instructionsTab = new Tab("Instructions", instruction);
         tabPane.getTabs().add(instructionsTab);
         tabPane.getSelectionModel().select(instructionsTab);
->>>>>>> refs/remotes/origin/main
     }
 
     @FXML

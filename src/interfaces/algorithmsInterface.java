@@ -4,18 +4,20 @@
  */
 package interfaces;
 
+import java.io.File;
+
 /**
  *
  * @author akira
  */
 public interface algorithmsInterface {
     
-    void countDates(String filePath, int sheetIndex, String start, String end);
+    void countDates(File filePath, int sheetIndex, String start, String end);
     
-    void countBoys(String filePath, int sheetIndex, String start, String end, String perDay);
+    void countBoys(File filePath, int sheetIndex, String start, String end, String perDay);
     
-    void countGirls(String filePath, int sheetIndex, String start, String end, String perDay);
+    void countGirls(File filePath, int sheetIndex, String start, String end, String perDay);
     
-    void countTotalPerDay(String filePath, int sheetIndex, String totalPerDayCells);
+    void countTotalPerDay(File filePath, int sheetIndex, String totalPerDayCells);
     
 }
